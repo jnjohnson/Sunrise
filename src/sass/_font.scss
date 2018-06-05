@@ -1,0 +1,18 @@
+@import 'colors';
+
+h1 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 8em;
+
+    margin-top: 0px;
+}
+
+h2 {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 2em;
+}
+
+h1, h2 {
+    color: $white;
+    text-align: center;
+}
