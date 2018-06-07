@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Star from './Star';
 import TitleCard from './TitleCard';
 
@@ -15,7 +15,7 @@ class App extends React.Component {
     render() {
         return (
             <div className="background">
-                <TitleCard />
+                <TitleCard fadeEnd={1500} />
                 <div className="stars-wrapper">
                     {this.renderStars()}
                 </div>
