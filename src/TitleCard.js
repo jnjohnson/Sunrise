@@ -1,16 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 class TitleCard extends React.Component {
     constructor(props){
         super(props);
-        this.state = {
-            scrollTop = 0,
-        }
-
-        this.props = {
-            fadeBegin = 0,
-            fadeEnds = 1500
-        }
     }
 
     componentDidMount() {
@@ -22,8 +14,8 @@ class TitleCard extends React.Component {
     }
 
     handleScroll() {
-        var titleCard = document.getElementsByClassName("title-card-bg");
-        console.log(titleCard[0].getBoundingClientRect().top);
+        var background = document.getElementsByClassName('title-card-bg')[0];
+        background.style.opacity = 1 - (window.scrollY / this.props.fadeEnd);
     }
 
     render() {
