@@ -15,7 +15,7 @@ class App extends React.Component {
     render() {
         return (
             <div className="background">
-                <TitleCard fadeEnd={1500} />
+                <TitleCard />
                 <div className="stars-wrapper">
                     {this.renderStars()}
                 </div>
