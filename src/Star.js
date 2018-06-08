@@ -9,15 +9,19 @@ class Star extends React.Component {
         }
     }
 
-    /*componentDidMount(){
-        var interval = Math.floor(Math.random() * 10000); //Sets interval as some fraction of 10 seconds
-        this.timerID = setInterval(this.twinkle(interval), interval);
+    componentDidMount(){
+        this.interval = Math.floor(Math.random() * 10000); //Sets interval as some fraction of 10 seconds
+        this.timerID = setInterval(this.twinkle(), this.interval);
         return;
     }
 
-    twinkle(interval) {
-        console.log("hello");
-    }*/
+    componentWillUnmount(){
+        clearInterval(this.timerID);
+    }
+
+    twinkle() {
+        console.log("Hello");
+    }
 
     generateX() {
         return Math.floor(Math.random() * this.state.windowWidth);
