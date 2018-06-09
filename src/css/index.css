@@ -16,7 +16,7 @@ body {
   padding: 0; }
 
 .background {
-  height: 600vh;
+  height: 1000vh;
   background-color: #000000; }
 
 .title-card-bg {
@@ -36,7 +36,7 @@ body {
   z-index: 1; }
 
 .star {
-  position: fixed;
+  position: absolute;
   background-color: #ffffff;
   width: 4px;
   height: 4px;

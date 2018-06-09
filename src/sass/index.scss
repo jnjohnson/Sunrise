@@ -8,7 +8,7 @@ body {
 }
 
 .background {
-    height: 600vh;
+    height: 1000vh;
     background-color: $black;
 }
 
@@ -34,7 +34,7 @@ body {
 }
 
 .star {
-    position: fixed;
+    position: absolute;
     background-color: $white;
 
     width: 4px;
