@@ -1,18 +1,18 @@
 import React from 'react';
 
-const fadeEnd = 1500;
+const fadeEnd = 2000;
 
 class TitleCard extends React.Component {
 
     componentDidMount() {
-        window.addEventListener('scroll', this.handleScroll);
+        window.addEventListener('scroll', this.changeTitleCardOpacity);
     }
 
     componentWillUnmount() {
-        window.removeEventListener('scroll', this.handleScroll);
+        window.removeEventListener('scroll', this.changeTitleCardOpacity);
     }
 
-    handleScroll(props) {
+    changeTitleCardOpacity(props) {
         var background = document.getElementsByClassName('title-card-bg')[0];
         background.style.opacity = 1 - (window.scrollY / fadeEnd);
     }
