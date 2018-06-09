@@ -13,7 +13,8 @@ class StarField extends React.Component {
 
     shiftStars() {
         var starField = document.getElementsByClassName('star-field')[0];
-        starField.style.top = 0 - ((window.scrollY / shiftUpEnd) * 100);
+        let top = -Math.ceil((window.scrollY / shiftUpEnd) * 50);
+        starField.style.top = top + "px";
     }
 
     renderStars() {
