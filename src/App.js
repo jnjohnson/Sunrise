@@ -9,6 +9,7 @@ class App extends React.Component {
             <div className="background">
                 <TitleCard />
                 <StarField />
+                <div className="ground"></div>
             </div>
         );
     }
