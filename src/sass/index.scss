@@ -10,6 +10,8 @@ body {
 .background {
     height: 1000vh;
     background-color: $black;
+
+    overflow: hidden;
 }
 
 .title-card-bg {
@@ -41,3 +43,14 @@ body {
     height: 4px;
     border-radius: 100%;
 }
+
+/*.ground {
+    position: fixed;
+    width: 5000px;
+    height: 1000px;
+
+    background-color: darkgreen;
+    border-radius: 50%;
+
+    left: -1500px;
+}*/
