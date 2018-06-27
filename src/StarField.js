@@ -1,8 +1,9 @@
 import React from 'react';
 
-const shiftUpEnd = 3000;
-const fadeAnimationLength = 3000;
-const fadeAnimationFrames = 60;
+const shiftUpEnd            = 3500;
+const shiftUpAmount         = 125;
+const fadeAnimationLength   = 3000;
+const fadeAnimationFrames   = 60;
 
 class StarField extends React.Component {
 
@@ -25,9 +26,11 @@ class StarField extends React.Component {
     }
 
     shiftStars() {
-        this.setState({
-            top: -Math.ceil((window.scrollY / shiftUpEnd) * 50)
-        });
+        if (window.scrollY <= shiftUpEnd) {
+            this.setState({
+                top: -Math.ceil((window.scrollY / shiftUpEnd) * shiftUpAmount)
+            });
+        }
     }
 
     renderStars() {
