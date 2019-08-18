@@ -62,7 +62,6 @@ class Star extends React.Component {
             top: top,
             left: left
         };
-        this.opacityDifference = 0;
         this.defaultOpacity = this.state.opacity;
         this.twinkleExecutionDelay = Math.floor(Math.random() * (500 - 100) + 100);
         this.twinkle = this.twinkle.bind(this);
@@ -89,10 +88,10 @@ class Star extends React.Component {
                 star.setState({
                     opacity: star.state.opacity + star.state.fadeDirection/fadeAnimationFrames
                 });
-                star.opacityDifference = Math.abs(star.state.opacity - star.defaultOpacity);
+                let opacityDifference = Math.abs(star.state.opacity - star.defaultOpacity);
                 //Reverses the direction of the opacity change if opacity is greater than 1, less than zero, 
                 //or if the difference from the default opacity is greater than 0.3
-                if (star.state.opacity > 1 || star.state.opacity < 0 || star.opacityDifference > 0.3){
+                if (star.state.opacity > 1 || star.state.opacity < 0 || opacityDifference > 0.3){
                     star.setState({
                         fadeDirection:  star.state.fadeDirection * -1
                     });

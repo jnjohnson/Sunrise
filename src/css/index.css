@@ -28,7 +28,7 @@ body {
   align-items: center;
   justify-content: center;
   position: fixed;
-  z-index: 10; }
+  z-index: 100; }
 
 .star-field {
   width: 100%;
@@ -49,3 +49,42 @@ body {
   height: 125px;
   background-color: #A57B51;
   border-top: 40px solid #456C57; }
+
+.moon {
+  position: fixed;
+  width: 203px;
+  height: 203px;
+  border-radius: 100%;
+  box-shadow: inset 11px -9px #89868D;
+  background-color: #D8D8D8;
+  z-index: 10; }
+
+.crater, .crater-1, .crater-2, .crater-3, .crater-4, .crater-5 {
+  position: absolute;
+  border-radius: 100%;
+  background-color: #89868D; }
+  .crater-1 {
+    width: 16px;
+    height: 16px;
+    top: 28px;
+    left: 130px; }
+  .crater-2 {
+    width: 25px;
+    height: 25px;
+    top: 48px;
+    left: 104px; }
+  .crater-3 {
+    width: 43px;
+    height: 43px;
+    top: 56px;
+    left: 142px; }
+  .crater-4 {
+    width: 14px;
+    height: 14px;
+    top: 154px;
+    left: 126px; }
+  .crater-5 {
+    width: 11px;
+    height: 11px;
+    top: 119px;
+    left: 173px; }
