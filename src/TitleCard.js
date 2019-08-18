@@ -22,9 +22,15 @@ class TitleCard extends React.Component {
     }
 
     changeTitleCardOpacity() {
-        this.setState({
-            opacity: 1 - (window.scrollY / fadeEnd)
-        });
+        if (window.scrollY <= fadeEnd) {
+            this.setState({
+                opacity: 1 - (window.scrollY / fadeEnd)
+            });
+        } else {
+            this.setState({
+                opacity: 0
+            })
+        }
     }
 
     render() {
