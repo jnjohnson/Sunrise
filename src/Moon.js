@@ -1,7 +1,9 @@
 import React from 'react';
 
-const moonTraverseBegin = 4500;
-const windowWidth       = window.innerWidth;
+const moonTraverseBegin     = 4500;
+const moonTraverseAmount    = 4500;
+const moonTraverseEnd       = moonTraverseBegin + moonTraverseAmount;
+const windowWidth           = window.innerWidth;
 
 class Moon extends React.Component {
     constructor(props){
@@ -9,9 +11,10 @@ class Moon extends React.Component {
 
         this.state = {
             left: -203,
-            top: 400,
+            top: 50,
         }
-
+        this.initialPositionX = this.state.left;
+        this.initialPositionY = this.state.top;
         this.traverseMoon = this.traverseMoon.bind(this);
     }
 
@@ -20,12 +23,24 @@ class Moon extends React.Component {
     }
 
     traverseMoon(){
-        if (window.scrollY >= moonTraverseBegin){
+        if (window.scrollY <= moonTraverseBegin) {
             this.setState({
-                left: this.state.left + (window.scrollY - moonTraverseBegin),
-                top: this.state.top + -0.05*Math.pow(moonTraverseBegin - window.scrollY, 2)    
+                left: this.initialPositionX,
+                top: this.initialPositionY,
+            });
+        }
+        else if (window.scrollY > moonTraverseBegin && window.scrollY <= moonTraverseEnd){
+            let x = this.initialPositionX + ((window.scrollY - moonTraverseBegin)/moonTraverseAmount) * (windowWidth * 1.2);
+            this.setState({
+                left: this.initialPositionX + ((window.scrollY - moonTraverseBegin)/moonTraverseAmount) * (windowWidth * 1.2),
+                top: 0.0004*Math.pow(x - (windowWidth/2 + this.initialPositionX + 90), 2) + this.initialPositionY
             })
-            const x=1;
+        }
+        else if (window.scrollY > moonTraverseEnd) {
+            this.setState({
+                left: windowWidth + 203,
+                top: 0
+            })
         }
     }
 
