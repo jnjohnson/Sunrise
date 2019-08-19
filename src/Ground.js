@@ -1,18 +1,18 @@
 import React from 'react';
 
-const shiftUpAmount = 125;
-const shiftAnimationAmount = 1500;
-const shiftAnimationBegin = 2000;
-const shiftAnimationEnd = shiftAnimationBegin + shiftAnimationAmount;
+const shiftUpAmount         = 125;
+const shiftAnimationAmount  = 1500;
+const shiftAnimationBegin   = 2000;
+const shiftAnimationEnd     = shiftAnimationBegin + shiftAnimationAmount;
 
 class Ground extends React.Component {
     constructor(props){
         super(props);
 
         this.state = {
-            top: window.innerHeight + 5
+            bottom: -shiftUpAmount - 5
         }
-        this.initialPosition = this.state.top;
+        this.initialPosition = this.state.bottom;
         this.shiftGround = this.shiftGround.bind(this);
     }
 
@@ -23,20 +23,26 @@ class Ground extends React.Component {
     shiftGround() {
         if (window.scrollY < shiftAnimationBegin){
             this.setState({
-                top: this.initialPosition
+                bottom: this.initialPosition
             });
         }
-        if (window.scrollY > shiftAnimationBegin && window.scrollY <= shiftAnimationEnd){
+        else if (window.scrollY > shiftAnimationBegin && window.scrollY <= shiftAnimationEnd){
             this.setState({
-                top: this.initialPosition - ((window.scrollY - shiftAnimationBegin)/shiftAnimationAmount)*shiftUpAmount
+                bottom: this.initialPosition + ((window.scrollY - shiftAnimationBegin)/shiftAnimationAmount)*shiftUpAmount
             });
             //console.log('initial position: ' + this.initialPosition + '; current position: ' + this.state.top);
         }
+        else if (window.scrollY > shiftAnimationEnd) {
+            this.setState({
+                bottom: 0
+            })
+        }
+
     }
 
     render() {
         return(
-            <div className="ground" style={{top: this.state.top}}></div>
+            <div className="ground" style={{bottom: this.state.bottom}}></div>
         )
     }
 }
