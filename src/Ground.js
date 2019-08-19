@@ -30,7 +30,7 @@ class Ground extends React.Component {
             this.setState({
                 top: this.initialPosition - ((window.scrollY - shiftAnimationBegin)/shiftAnimationAmount)*shiftUpAmount
             });
-            console.log('initial position: ' + this.initialPosition + '; current position: ' + this.state.top);
+            //console.log('initial position: ' + this.initialPosition + '; current position: ' + this.state.top);
         }
     }
 
