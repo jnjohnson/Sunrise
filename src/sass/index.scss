@@ -51,6 +51,7 @@ body {
 
     background-color: $dirt;
     border-top: 40px solid $grass;
+    box-sizing: border-box;
     z-index: 100;
 }
 

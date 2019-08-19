@@ -49,6 +49,7 @@ body {
   height: 125px;
   background-color: #A57B51;
   border-top: 40px solid #456C57;
+  box-sizing: border-box;
   z-index: 100; }
 
 .moon {
