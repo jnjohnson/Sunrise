@@ -48,7 +48,8 @@ body {
   width: 100%;
   height: 125px;
   background-color: #A57B51;
-  border-top: 40px solid #456C57; }
+  border-top: 40px solid #456C57;
+  z-index: 100; }
 
 .moon {
   position: fixed;
